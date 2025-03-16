@@ -8,9 +8,19 @@ class HomePage extends StatelessWidget {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
-        backgroundColor: theme.colorScheme.inversePrimary,
-        foregroundColor: theme.colorScheme.onSurface,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person),
+            tooltip: 'Profile Page',
+            onPressed: () => Navigator.pushNamed(context, '/profile'),
+          ),
+        ],
+        title: Text(
+          'Home Page',
+          style: theme.textTheme.titleLarge?.copyWith(
+            color: theme.colorScheme.onSurface,
+          ),
+        ),
         elevation: 2,
       ),
       body: Center(

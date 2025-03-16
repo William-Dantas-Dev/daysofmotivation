@@ -1,22 +1,41 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.delayed(Duration(seconds: 0), () {
+        if (context.mounted) {
+          Navigator.pushReplacementNamed(context, '/home');
+        }
+      });
+    });
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Splash Page'),
-        backgroundColor: theme.colorScheme.inversePrimary,
-        foregroundColor: theme.colorScheme.onSurface,
-        elevation: 2,
-      ),
-      body: Center(
-        child: Text(
-          'Splash Page',
-          style: TextStyle(fontSize: 20, color: theme.colorScheme.onSurface),
+      backgroundColor: Colors.blueAccent,
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Icon(Icons.star, size: 100.0, color: Colors.white),
+              SizedBox(height: 20),
+              Text(
+                "Hoje é um novo dia para conquistar seus sonhos!",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
         ),
       ),
     );
