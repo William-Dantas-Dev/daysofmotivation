@@ -1,6 +1,7 @@
 import 'package:daysofmotivation/widgets/card_section.dart';
 import 'package:daysofmotivation/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -9,11 +10,12 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final navigator = Navigator.of(context);
+    final localization = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Settings',
+          localization.settings,
           style: theme.textTheme.titleLarge?.copyWith(
             color: theme.colorScheme.onSurface,
           ),
@@ -26,10 +28,10 @@ class SettingsPage extends StatelessWidget {
         child: Column(
           children: [
             CardSection(
-              sectionTitle: "Account & Privacy",
+              sectionTitle: localization.account_privacy,
               children: [
                 CustomListTile(
-                  title: "Account",
+                  title: localization.account,
                   icon: Icons.account_circle,
                   trailing: Icon(
                     Icons.arrow_forward_ios,
@@ -39,7 +41,7 @@ class SettingsPage extends StatelessWidget {
                   onTap: () => navigator.pushNamed('/account'),
                 ),
                 CustomListTile(
-                  title: "Privacy",
+                  title: localization.privacy,
                   icon: Icons.lock,
                   trailing: Icon(
                     Icons.arrow_forward_ios,
@@ -51,10 +53,10 @@ class SettingsPage extends StatelessWidget {
               ],
             ),
             CardSection(
-              sectionTitle: "Appearance",
+              sectionTitle: localization.appearance,
               children: [
                 CustomListTile(
-                  title: "Theme",
+                  title: localization.theme,
                   icon: Icons.dark_mode,
                   trailing: Icon(
                     Icons.arrow_forward_ios,
@@ -64,7 +66,7 @@ class SettingsPage extends StatelessWidget {
                   onTap: () => navigator.pushNamed('/theme'),
                 ),
                 CustomListTile(
-                  title: "Language",
+                  title: localization.appearance_language,
                   icon: Icons.language,
                   trailing: Icon(
                     Icons.arrow_forward_ios,
@@ -76,10 +78,10 @@ class SettingsPage extends StatelessWidget {
               ],
             ),
             CardSection(
-              sectionTitle: "Notifications & Sound",
+              sectionTitle: localization.notifications_sound,
               children: [
                 CustomListTile(
-                  title: "Volume",
+                  title: localization.volume,
                   icon: Icons.volume_up,
                   trailing: Icon(
                     Icons.arrow_forward_ios,
@@ -89,7 +91,7 @@ class SettingsPage extends StatelessWidget {
                   onTap: () => navigator.pushNamed('/volume'),
                 ),
                 CustomListTile(
-                  title: "Notifications",
+                  title: localization.notifications,
                   icon: Icons.notifications,
                   trailing: Icon(
                     Icons.arrow_forward_ios,
@@ -101,10 +103,10 @@ class SettingsPage extends StatelessWidget {
               ],
             ),
             CardSection(
-              sectionTitle: "Support & Info",
+              sectionTitle: localization.support_info,
               children: [
                 CustomListTile(
-                  title: "Help & Feedback",
+                  title: localization.help_feedback,
                   icon: Icons.help,
                   trailing: Icon(
                     Icons.arrow_forward_ios,
@@ -114,7 +116,7 @@ class SettingsPage extends StatelessWidget {
                   onTap: () => navigator.pushNamed('/help'),
                 ),
                 CustomListTile(
-                  title: "About",
+                  title: localization.about,
                   icon: Icons.info,
                   trailing: Icon(
                     Icons.arrow_forward_ios,
@@ -124,7 +126,7 @@ class SettingsPage extends StatelessWidget {
                   onTap: () => navigator.pushNamed('/about'),
                 ),
                 CustomListTile(
-                  title: "Backup & Restore",
+                  title: localization.backup_restore,
                   icon: Icons.cloud_upload,
                   trailing: Icon(
                     Icons.arrow_forward_ios,

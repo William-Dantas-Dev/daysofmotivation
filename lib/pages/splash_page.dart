@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:daysofmotivation/provider/theme_provider.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends ConsumerWidget {
   const SplashPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(Duration(seconds: 0), () {
-        if (context.mounted) {
-          Navigator.pushReplacementNamed(context, '/home');
-        }
-      });
+  Widget build(BuildContext context, WidgetRef ref) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await ref.read(themeProvider.notifier).loadTheme();
+
+      if (context.mounted) {
+        Navigator.pushReplacementNamed(context, '/home');
+      }
     });
 
     return Scaffold(

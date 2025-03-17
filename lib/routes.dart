@@ -1,4 +1,5 @@
 import 'package:daysofmotivation/pages/home_page.dart';
+import 'package:daysofmotivation/pages/language_page.dart';
 import 'package:daysofmotivation/pages/profile_page.dart';
 import 'package:daysofmotivation/pages/settings_page.dart';
 import 'package:daysofmotivation/pages/splash_page.dart';
@@ -11,6 +12,7 @@ class Routes {
   static const String profilePage = '/profile';
   static const String settingsPage = '/settings';
   static const String themePage = '/theme';
+  static const String languagePage = '/language';
 
   static Map<String, WidgetBuilder> get routes {
     return {
@@ -19,6 +21,7 @@ class Routes {
       settingsPage: (context) => SettingsPage(),
       homePage: (context) => HomePage(),
       themePage: (context) => ThemePage(),
+      languagePage: (context) => LanguagePage(),
     };
   }
 }

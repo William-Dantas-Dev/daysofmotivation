@@ -1,0 +1,30 @@
+{
+    "@@locale": "Português",
+    "language": "Português",
+    "language_page_title": "Idioma",
+    "language_portuguese": "Português",
+    "language_english": "Inglês",
+    "language_system": "Padrão Do Sistema",
+    
+    "settings": "Configurações",
+    "account_privacy": "Conta & Privacidade",
+    "account": "Conta",
+    "privacy": "Privacidade",
+
+    "appearance": "Aparência",
+    "theme": "Tema",
+    "appearance_language": "Idioma",
+
+    "notifications_sound": "Notificações & Som",
+    "volume": "Volume",
+    "notifications": "Notificações",
+
+    "support_info": "Suporte & Informações",
+    "help_feedback": "Ajuda & Feedback",
+    "about": "Sobre",
+    "backup_restore": "Backup & Restauração",
+
+    "light_theme": "Tema Claro",
+    "dark_theme": "Tema Escuro",
+    "theme_system": "Padrão Do Sistema"
+}

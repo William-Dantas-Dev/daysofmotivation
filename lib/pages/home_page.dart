@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Home Page',
+          "Home Page",
           style: TextStyle(fontSize: 20, color: theme.colorScheme.onSurface),
         ),
       ),
