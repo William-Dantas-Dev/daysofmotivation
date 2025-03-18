@@ -11,7 +11,7 @@ class SplashPage extends ConsumerWidget {
       await ref.read(themeProvider.notifier).loadTheme();
 
       if (context.mounted) {
-        Navigator.pushReplacementNamed(context, '/home');
+        Navigator.pushReplacementNamed(context, '/initialSetup');
       }
     });
 
